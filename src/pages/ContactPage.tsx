@@ -793,18 +793,18 @@ const canadianOffices: Office[] = [
     phone: "+1 (672) 202-1705",
     email: "info@petrovaraenergy.com",
   },
-  {
-    city: "Grande Prairie",
-    country: "Canada",
-    address: "9835 – 101 Ave, Grande Prairie, AB T8V 0X6",
-    email: "gp@petrovaraenergy.com",
-  },
-  {
-    city: "Edmonton",
-    country: "Canada",
-    address: "200 – 10060 Jasper Ave, Edmonton, AB T5J 3R8",
-    email: "edmonton@petrovaraenergy.com",
-  },
+  // {
+  //   city: "Grande Prairie",
+  //   country: "Canada",
+  //   address: "9835 – 101 Ave, Grande Prairie, AB T8V 0X6",
+  //   email: "gp@petrovaraenergy.com",
+  // },
+  // {
+  //   city: "Edmonton",
+  //   country: "Canada",
+  //   address: "200 – 10060 Jasper Ave, Edmonton, AB T5J 3R8",
+  //   email: "edmonton@petrovaraenergy.com",
+  // },
 ];
 
 // Add any future branches here — the marquee will adapt automatically!
@@ -903,7 +903,7 @@ function OfficeCard({ office }: { office: Office }) {
 
 function GlobalBranchCard({ branch }: { branch: GlobalBranch }) {
   return (
-    <div className="w-[260px] sm:w-[280px] shrink-0 border border-slate-200 p-6 bg-slate-50 flex flex-col justify-between hover:border-orange-200 hover:bg-slate-100/80 transition-colors select-none">
+    <div className="w- 5-[280px] shrink-0 border border-slate-200 p-6 bg-slate-50 flex flex-col justify-between hover:border-orange-200 hover:bg-slate-100/80 transition-colors select-none">
       <div>
         <span className="text-[10px] font-bold uppercase tracking-wider text-orange-700 bg-orange-100/60 px-2 py-0.5 rounded inline-block mb-2">
           {branch.country}
@@ -1005,7 +1005,7 @@ function GlobalBranchesSection() {
       </div>
 
       {/* Marquee Outer Container with Side Fade Overlay */}
-      <div className="relative overflow-hidden w-full py-2 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-12 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:bottom-0 after:w-12 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
+      <div className="relative overflow-hidden w-full py-2 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-12 before:bg-linear-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:bottom-0 after:w-12 after:bg-linear-to-l after:from-white after:to-transparent after:z-10">
         <div className="animate-global-marquee gap-6 pr-6">
           {marqueeItems.map((branch, index) => (
             <div
