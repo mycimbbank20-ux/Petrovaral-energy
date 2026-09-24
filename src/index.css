@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-navy-950: #050e1f;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f2040;
+  --color-navy-700: #162d58;
+  --color-navy-600: #1e3d70;
+  --color-orange-700: #a34500;
+  --color-orange-600: #c85a00;
+  --color-orange-500: #e06520;
+
+  /* Fonts — enables Tailwind utility classes like `font-display`, `font-body`, `font-ui` */
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body: "Barlow", sans-serif;
+  --font-ui: "Inter", sans-serif;
+}
+
+:root {
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body: "Barlow", sans-serif;
+  --font-ui: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: #0a1628;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #c85a00;
+  border-radius: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+/* Accent lines */
+.accent-line {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: #c85a00;
+  margin-bottom: 1.5rem;
+}
+.accent-line-center {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: #c85a00;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Dropdown nav */
+.dropdown-menu {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
+}
+.dropdown-trigger:hover .dropdown-menu,
+.dropdown-trigger:focus-within .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Section divider */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(10, 22, 40, 0.15),
+    transparent
+  );
+}
+
+/* Card hover — light surface */
+.card-hover {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(10, 22, 40, 0.12);
+}
+
+/* Card hover — dark surface */
+.card-hover-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.card-hover-dark {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Primary button — orange, always */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #c85a00;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-primary:hover {
+  background: #e06520;
+}
+
+/* Outline on dark backgrounds */
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+.btn-outline-dark:hover {
+  border-color: #c85a00;
+  background: rgba(200, 90, 0, 0.12);
+}
+
+/* Outline on light backgrounds */
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #0a1628;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: 2px solid #0a1628;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+.btn-outline-light:hover {
+  border-color: #c85a00;
+  color: #c85a00;
+}
+
+/* Form fields — light */
+.form-field {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d1d9e6;
+  color: #0a1628;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.form-field:focus {
+  border-color: #c85a00;
+  box-shadow: 0 0 0 3px rgba(200, 90, 0, 0.1);
+}
+.form-field::placeholder {
+  color: #94a3b8;
+}
+select.form-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230a1628' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
+}
+
+/* Stat number */
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: #c85a00;
+  line-height: 1;
+}
+
+/* Mobile menu */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #ffffff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-nav-overlay.open {
+  transform: translateX(0);
+}
