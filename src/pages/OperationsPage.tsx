@@ -1,10 +1,10 @@
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../components/PageHeader"
 import {
   PIPELINE_IMG,
   FOREST_PIPE_IMG,
   REFINERY_IMG,
   PIPES_IMG,
-} from "../constants/images";
+} from "../constants/images"
 
 const ops = [
   {
@@ -51,10 +51,10 @@ const ops = [
       "Third-party throughput capacity",
     ],
   },
-];
+]
 
-function OperationBlock({ op, index }: { op: (typeof ops)[0]; index: number }) {
-  const isReversed = index % 2 === 1;
+function OperationBlock({ op, index }: { op: typeof ops[0] index: number }) {
+  const isReversed = index % 2 === 1
   return (
     <div
       className={`py-16 sm:py-20 ${isReversed ? "bg-slate-50" : "bg-white"}`}
@@ -102,7 +102,7 @@ function OperationBlock({ op, index }: { op: (typeof ops)[0]; index: number }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default function OperationsPage() {
@@ -117,5 +117,5 @@ export default function OperationsPage() {
         <OperationBlock key={op.title} op={op} index={i} />
       ))}
     </main>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { toast } from "sonner";
-import PageHeader from "../components/PageHeader";
-import { INDUSTRIAL_IMG } from "../constants/images";
+import { useState } from "react"
+import { toast } from "sonner"
+import PageHeader from "../components/PageHeader"
+import { INDUSTRIAL_IMG } from "../constants/images"
 
 const offices = [
   {
@@ -22,7 +22,7 @@ const offices = [
     // phone: "+1 (780) 987-6543",
     email: "edmonton@petrovaraenergy.com",
   },
-];
+]
 
 const subjects = [
   "General Inquiry",
@@ -32,14 +32,14 @@ const subjects = [
   "Careers & HR",
   "Community Relations",
   "Other",
-];
+]
 
 interface FormState {
-  name: string;
-  email: string;
-  company: string;
-  subject: string;
-  message: string;
+  name: string
+  email: string
+  company: string
+  subject: string
+  message: string
 }
 
 const initialForm: FormState = {
@@ -48,7 +48,7 @@ const initialForm: FormState = {
   company: "",
   subject: "",
   message: "",
-};
+}
 
 function OfficesSection() {
   return (
@@ -107,35 +107,33 @@ function OfficesSection() {
         </div>
       ))}
     </div>
-  );
+  )
 }
 
 function ContactForm() {
-  const [form, setForm] = useState<FormState>(initialForm);
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState<FormState>(initialForm)
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  };
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSending(true);
+    e.preventDefault()
+    setSending(true)
 
     // Simulate network delay
-    await new Promise((r) => setTimeout(r, 900));
+    await new Promise((r) => setTimeout(r, 900))
 
     toast.success("Message sent!", {
       description: "A member of our team will respond within 2 business days.",
-    });
-    setSending(false);
-    setSent(true);
-  };
+    })
+    setSending(false)
+    setSent(true)
+  }
 
   if (sent) {
     return (
@@ -175,8 +173,8 @@ function ContactForm() {
         </p>
         <button
           onClick={() => {
-            setSent(false);
-            setForm(initialForm);
+            setSent(false)
+            setForm(initialForm)
           }}
           className="mt-6 text-sm text-orange-600 hover:underline"
           style={{ fontFamily: "'Barlow', sans-serif" }}
@@ -184,7 +182,7 @@ function ContactForm() {
           Send another message
         </button>
       </div>
-    );
+    )
   }
 
   return (
@@ -305,7 +303,7 @@ function ContactForm() {
         </button>
       </form>
     </>
-  );
+  )
 }
 
 export default function ContactPage() {
@@ -325,5 +323,5 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
-  );
+  )
 }

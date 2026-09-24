@@ -1,13 +1,13 @@
-import { toast } from "sonner";
-import PageHeader from "../components/PageHeader";
-import { CANADA_IMG } from "../constants/images";
+import { toast } from "sonner"
+import PageHeader from "../components/PageHeader"
+import { CANADA_IMG } from "../constants/images"
 
 const metrics = [
   { value: "25%", label: "GHG Intensity Reduction Target by 2030" },
   { value: "0", label: "Lost Time Injuries in 2025" },
   { value: "40+", label: "Community Investments in 2025" },
   { value: "100%", label: "Operations Reporting ESG Metrics" },
-];
+]
 
 const pillars = [
   {
@@ -40,7 +40,7 @@ const pillars = [
     title: "Climate Strategy",
     desc: "We support Canada's transition by improving operational efficiency, reducing flaring and methane emissions, and exploring clean energy opportunities.",
   },
-];
+]
 
 function MetricsSection() {
   return (
@@ -83,7 +83,7 @@ function MetricsSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 function PillarsSection() {
@@ -122,15 +122,15 @@ function PillarsSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 function ReportCTASection() {
   const handleDownload = () => {
     toast.success("Downloading 2025 Sustainability Report…", {
       description: "Your download will begin shortly.",
-    });
-  };
+    })
+  }
 
   return (
     <section className="py-16 bg-navy-900">
@@ -158,7 +158,7 @@ function ReportCTASection() {
         </button>
       </div>
     </section>
-  );
+  )
 }
 
 export default function SustainabilityPage() {
@@ -173,5 +173,5 @@ export default function SustainabilityPage() {
       <PillarsSection />
       <ReportCTASection />
     </main>
-  );
+  )
 }

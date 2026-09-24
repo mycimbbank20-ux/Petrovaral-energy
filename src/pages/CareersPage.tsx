@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import PageHeader from "../components/PageHeader";
-import { TEAM_IMG } from "../constants/images";
+import { Link } from "react-router-dom"
+import PageHeader from "../components/PageHeader"
+import { TEAM_IMG } from "../constants/images"
 
 const benefits = [
   {
@@ -23,7 +23,7 @@ const benefits = [
     title: "Inclusive Culture",
     desc: "A diverse, inclusive workplace where every perspective is valued and respected.",
   },
-];
+]
 
 const jobs = [
   {
@@ -86,7 +86,7 @@ const jobs = [
     location: "Calgary, AB (Hybrid)",
     posted: "Aug 15, 2026",
   },
-];
+]
 
 function WhyPetrovaraSection() {
   return (
@@ -157,7 +157,7 @@ function WhyPetrovaraSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 function JobListingsSection() {
@@ -264,7 +264,7 @@ function JobListingsSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 export default function CareersPage() {
@@ -278,5 +278,5 @@ export default function CareersPage() {
       <WhyPetrovaraSection />
       <JobListingsSection />
     </main>
-  );
+  )
 }

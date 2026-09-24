@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
-type NavChild = { label: string; to: string };
-type NavItem = { label: string; to?: string; children?: NavChild[] };
+type NavChild = { label: string to: string }
+type NavItem = { label: string to?: string children?: NavChild[] }
 
 const navItems: NavItem[] = [
   { label: "Home", to: "/" },
@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Contact", to: "/contact" },
-];
+]
 
 const navLabelStyle: React.CSSProperties = {
   fontFamily: "'Barlow Condensed', sans-serif",
@@ -42,20 +42,20 @@ const navLabelStyle: React.CSSProperties = {
   fontSize: "1rem",
   letterSpacing: "0.1em",
   textTransform: "uppercase",
-};
+}
 
 export default function Navbar() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
 
-  const isActive = (to: string) => location.pathname === to;
+  const isActive = (to: string) => location.pathname === to
 
   const closeMenu = () => {
-    setMobileOpen(false);
-    setMobileExpanded(null);
-  };
+    setMobileOpen(false)
+    setMobileExpanded(null)
+  }
 
   return (
     <>
@@ -147,7 +147,11 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.to!}
-                  className={`px-3 py-2 transition-colors ${isActive(item.to!) ? "text-orange-600" : "text-navy-900 hover:text-orange-600"}`}
+                  className={`px-3 py-2 transition-colors ${
+                    isActive(item.to!)
+                      ? "text-orange-600"
+                      : "text-navy-900 hover:text-orange-600"
+                  }`}
                   style={navLabelStyle}
                 >
                   {item.label}
@@ -187,7 +191,9 @@ export default function Navbar() {
 
       {/* ── Mobile menu ── */}
       <div
-        className={`mobile-nav-overlay ${mobileOpen ? "open" : ""} flex flex-col border-r border-slate-200`}
+        className={`mobile-nav-overlay ${
+          mobileOpen ? "open" : ""
+        } flex flex-col border-r border-slate-200`}
       >
         <div className="flex items-center justify-between px-6 h-16 border-b border-slate-200">
           <div
@@ -243,7 +249,9 @@ export default function Navbar() {
                 >
                   {item.label}
                   <svg
-                    className={`w-4 h-4 text-slate-400 transition-transform ${mobileExpanded === item.label ? "rotate-180" : ""}`}
+                    className={`w-4 h-4 text-slate-400 transition-transform ${
+                      mobileExpanded === item.label ? "rotate-180" : ""
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -277,7 +285,11 @@ export default function Navbar() {
                 key={item.label}
                 to={item.to!}
                 onClick={closeMenu}
-                className={`block py-3 border-b border-slate-100 transition-colors ${isActive(item.to!) ? "text-orange-600" : "text-navy-950 hover:text-orange-600"}`}
+                className={`block py-3 border-b border-slate-100 transition-colors ${
+                  isActive(item.to!)
+                    ? "text-orange-600"
+                    : "text-navy-950 hover:text-orange-600"
+                }`}
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
                   fontWeight: 700,
@@ -303,5 +315,5 @@ export default function Navbar() {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import PageHeader from "../components/PageHeader";
-import { TEAM_IMG, INDUSTRIAL_IMG } from "../constants/images";
+import PageHeader from "../components/PageHeader"
+import { TEAM_IMG, INDUSTRIAL_IMG } from "../constants/images"
 
 const coreValues = [
   {
@@ -37,7 +37,7 @@ const coreValues = [
     title: "Long-Term Value",
     desc: "We focus on sustainable growth rather than short-term gains, making decisions with a long-term perspective.",
   },
-];
+]
 
 const missionVisionCards = [
   {
@@ -56,13 +56,13 @@ const missionVisionCards = [
       "We envision Petrovara Energy growing from a Canadian foundation into a diversified energy enterprise with opportunities across exploration, production, natural gas, energy infrastructure, and emerging energy technologies.",
     ],
   },
-];
+]
 
 const ceoQuotes = [
   '"At Petrovara Energy Inc., we believe energy is more than a commodity — it is a foundation for economic growth, prosperity, and the development of communities around the world.',
   "Petrovara was established with a clear ambition: to build a modern Canadian energy company founded on responsible resource development, operational excellence, innovation, and integrity.",
   'We are ambitious about the future, disciplined in our approach, and committed to building Petrovara Energy into a respected Canadian energy enterprise with an international outlook."',
-];
+]
 
 function MissionVisionSection() {
   return (
@@ -99,7 +99,9 @@ function MissionVisionSection() {
             {card.body.map((p, i) => (
               <p
                 key={i}
-                className={`text-slate-600 leading-relaxed ${i < card.body.length - 1 ? "mb-4" : ""}`}
+                className={`text-slate-600 leading-relaxed ${
+                  i < card.body.length - 1 ? "mb-4" : ""
+                }`}
                 style={{ fontFamily: "'Barlow', sans-serif" }}
               >
                 {p}
@@ -109,7 +111,7 @@ function MissionVisionSection() {
         ))}
       </div>
     </section>
-  );
+  )
 }
 
 function CEOSection() {
@@ -189,7 +191,7 @@ function CEOSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 function CoreValuesSection() {
@@ -251,7 +253,7 @@ function CoreValuesSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 function PromiseBanner() {
@@ -283,7 +285,7 @@ function PromiseBanner() {
         </p>
       </div>
     </section>
-  );
+  )
 }
 
 export default function AboutPage() {
@@ -299,5 +301,5 @@ export default function AboutPage() {
       <CoreValuesSection />
       <PromiseBanner />
     </main>
-  );
+  )
 }

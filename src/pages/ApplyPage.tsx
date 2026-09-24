@@ -1,7 +1,7 @@
-import { useState, useRef } from "react";
-import { toast } from "sonner";
-import PageHeader from "../components/PageHeader";
-import { TEAM_IMG } from "../constants/images";
+import { useState, useRef } from "react"
+import { toast } from "sonner"
+import PageHeader from "../components/PageHeader"
+import { TEAM_IMG } from "../constants/images"
 
 const positions = [
   "Senior Reservoir Engineer",
@@ -15,7 +15,7 @@ const positions = [
   "GIS Analyst",
   "IT Infrastructure Specialist",
   "Other / General Application",
-];
+]
 const departments = [
   "Engineering",
   "Operations",
@@ -26,14 +26,14 @@ const departments = [
   "Information Technology",
   "Legal & Regulatory",
   "Corporate Development",
-];
+]
 const expLevels = [
   "Entry Level (0–2 years)",
   "Mid-Level (3–5 years)",
   "Senior (6–10 years)",
   "Principal / Expert (10+ years)",
   "Executive / Leadership",
-];
+]
 const edLevels = [
   "High School Diploma / GED",
   "Trade Certificate / Apprenticeship",
@@ -42,7 +42,7 @@ const edLevels = [
   "Master's Degree",
   "PhD / Doctorate",
   "Professional Designation (P.Eng, CPA, etc.)",
-];
+]
 const hearOptions = [
   "LinkedIn",
   "Company Website",
@@ -51,24 +51,24 @@ const hearOptions = [
   "Recruitment Agency",
   "Career Fair / Event",
   "Other",
-];
+]
 
 interface FormState {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  linkedin: string;
-  position: string;
-  department: string;
-  location: string;
-  type: string;
-  experience: string;
-  education: string;
-  coverLetter: string;
-  hearAbout: string;
-  resume: File | null;
-  consent: boolean;
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  linkedin: string
+  position: string
+  department: string
+  location: string
+  type: string
+  experience: string
+  education: string
+  coverLetter: string
+  hearAbout: string
+  resume: File | null
+  consent: boolean
 }
 
 const initialForm: FormState = {
@@ -87,7 +87,7 @@ const initialForm: FormState = {
   hearAbout: "",
   resume: null,
   consent: false,
-};
+}
 
 // ── Fieldset legend ────────────────────────────────────────────────────────────
 
@@ -110,7 +110,7 @@ function Legend({ children }: { children: React.ReactNode }) {
     >
       {children}
     </legend>
-  );
+  )
 }
 
 function FieldLabel({ children }: { children: React.ReactNode }) {
@@ -121,7 +121,7 @@ function FieldLabel({ children }: { children: React.ReactNode }) {
     >
       {children}
     </label>
-  );
+  )
 }
 
 // ── Form sections ──────────────────────────────────────────────────────────────
@@ -130,8 +130,8 @@ function PersonalInfoSection({
   form,
   onChange,
 }: {
-  form: FormState;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  form: FormState
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }) {
   return (
     <fieldset>
@@ -196,17 +196,15 @@ function PersonalInfoSection({
         </div>
       </div>
     </fieldset>
-  );
+  )
 }
 
 function PositionSection({
   form,
   onChange,
 }: {
-  form: FormState;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => void;
+  form: FormState
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
 }) {
   return (
     <fieldset>
@@ -271,15 +269,15 @@ function PositionSection({
         </div>
       </div>
     </fieldset>
-  );
+  )
 }
 
 function QualificationsSection({
   form,
   onChange,
 }: {
-  form: FormState;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  form: FormState
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }) {
   return (
     <fieldset>
@@ -317,17 +315,17 @@ function QualificationsSection({
         </div>
       </div>
     </fieldset>
-  );
+  )
 }
 
 function ResumeSection({
   resume,
   onFile,
 }: {
-  resume: File | null;
-  onFile: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  resume: File | null
+  onFile: (e: React.ChangeEvent<HTMLInputElement>) => void
 }) {
-  const fileRef = useRef<HTMLInputElement>(null);
+  const fileRef = useRef<HTMLInputElement>(null)
   return (
     <fieldset>
       <Legend>Resume / CV</Legend>
@@ -397,10 +395,10 @@ function ResumeSection({
         )}
       </div>
     </fieldset>
-  );
+  )
 }
 
-function SuccessScreen({ name, email }: { name: string; email: string }) {
+function SuccessScreen({ name, email }: { name: string email: string }) {
   return (
     <main>
       <PageHeader
@@ -454,60 +452,58 @@ function SuccessScreen({ name, email }: { name: string; email: string }) {
         </div>
       </section>
     </main>
-  );
+  )
 }
 
 // ── Main page ──────────────────────────────────────────────────────────────────
 
 export default function ApplyPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState<FormState>(initialForm);
+  const [submitted, setSubmitted] = useState(false)
+  const [form, setForm] = useState<FormState>(initialForm)
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
-    const { name, value, type } = e.target;
+    const { name, value, type } = e.target
     if (type === "checkbox") {
       setForm((f) => ({
         ...f,
         [name]: (e.target as HTMLInputElement).checked,
-      }));
+      }))
     } else {
-      setForm((f) => ({ ...f, [name]: value }));
+      setForm((f) => ({ ...f, [name]: value }))
     }
-  };
+  }
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] ?? null;
+    const file = e.target.files?.[0] ?? null
     if (file && file.size > 5 * 1024 * 1024) {
       toast.error("File too large", {
         description: "Please upload a file smaller than 5MB.",
-      });
-      return;
+      })
+      return
     }
-    setForm((f) => ({ ...f, resume: file }));
-    if (file) toast.info(`File selected: ${file.name}`);
-  };
+    setForm((f) => ({ ...f, resume: file }))
+    if (file) toast.info(`File selected: ${file.name}`)
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!form.resume) {
       toast.error("Resume required", {
         description: "Please upload your CV or resume before submitting.",
-      });
-      return;
+      })
+      return
     }
     toast.success("Application submitted!", {
       description: `Thank you ${form.firstName}. We'll be in touch within 10–14 business days.`,
-    });
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    })
+    setSubmitted(true)
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   if (submitted) {
-    return <SuccessScreen name={form.firstName} email={form.email} />;
+    return <SuccessScreen name={form.firstName} email={form.email} />
   }
 
   return (
@@ -553,9 +549,7 @@ export default function ApplyPage() {
               <PositionSection
                 form={form}
                 onChange={
-                  handleChange as React.ChangeEventHandler<
-                    HTMLInputElement | HTMLSelectElement
-                  >
+                  handleChange as React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>
                 }
               />
               <QualificationsSection
@@ -661,5 +655,5 @@ export default function ApplyPage() {
         </div>
       </section>
     </main>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 interface PageHeaderProps {
-  title: string;
-  subtitle?: string;
-  img: string;
+  title: string
+  subtitle?: string
+  img: string
 }
 
 export default function PageHeader({ title, subtitle, img }: PageHeaderProps) {
@@ -36,5 +36,5 @@ export default function PageHeader({ title, subtitle, img }: PageHeaderProps) {
         )}
       </div>
     </section>
-  );
+  )
 }

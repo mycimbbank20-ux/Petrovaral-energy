@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 const footerLinks = {
   company: [
@@ -12,7 +12,7 @@ const footerLinks = {
     { label: "Open Positions", to: "/careers" },
     { label: "Apply Now", to: "/apply" },
   ],
-};
+}
 
 const sectionHeadStyle: React.CSSProperties = {
   fontFamily: "'Barlow Condensed', sans-serif",
@@ -22,7 +22,7 @@ const sectionHeadStyle: React.CSSProperties = {
   color: "#c85a00",
   textTransform: "uppercase",
   marginBottom: "1rem",
-};
+}
 
 export default function Footer() {
   return (
@@ -157,5 +157,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
