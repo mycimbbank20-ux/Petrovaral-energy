@@ -31,6 +31,7 @@ const navItems: NavItem[] = [
       { label: "Why Petrovara", to: "/careers" },
       { label: "Open Positions", to: "/careers" },
       { label: "Apply Now", to: "/apply" },
+      { label: "Branches", to: "/contact" },
     ],
   },
   { label: "Contact", to: "/contact" },

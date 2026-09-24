@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   company: [
@@ -12,7 +12,7 @@ const footerLinks = {
     { label: "Open Positions", to: "/careers" },
     { label: "Apply Now", to: "/apply" },
   ],
-}
+};
 
 const sectionHeadStyle: React.CSSProperties = {
   fontFamily: "'Barlow Condensed', sans-serif",
@@ -22,7 +22,7 @@ const sectionHeadStyle: React.CSSProperties = {
   color: "#c85a00",
   textTransform: "uppercase",
   marginBottom: "1rem",
-}
+};
 
 export default function Footer() {
   return (
@@ -119,7 +119,7 @@ export default function Footer() {
                   href="mailto:info@petrovaraenergy.com"
                   className="hover:text-white transition-colors"
                 >
-                  info@petrovaraenergy.com
+                  info@petrovara.com
                 </a>
               </p>
               <p>
@@ -127,7 +127,7 @@ export default function Footer() {
                   href="tel:+14031234567"
                   className="hover:text-white transition-colors"
                 >
-                  +1 (403) 123-4567
+                  +1 (672) 202-1705
                 </a>
               </p>
             </address>
@@ -157,5 +157,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
