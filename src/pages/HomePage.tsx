@@ -536,8 +536,8 @@
 //   );
 // }
 
-import { useState, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import {
   HERO_IMG,
   CANADA_IMG,
@@ -545,16 +545,16 @@ import {
   PIPELINE_IMG,
   PIPES_IMG,
   FOREST_PIPE_IMG,
-} from "../constants/images"
+} from "../constants/images";
 
-const HERO_SLIDES = [HERO_IMG, PIPELINE_IMG, REFINERY_IMG, FOREST_PIPE_IMG]
+const HERO_SLIDES = [HERO_IMG, PIPELINE_IMG, REFINERY_IMG, FOREST_PIPE_IMG];
 
 const stats = [
   { value: "15+", label: "Years Experience" },
   { value: "4", label: "Operating Basins" },
   { value: "2,500+", label: "Employees" },
   { value: "TSX", label: "Listed Company" },
-]
+];
 
 const values = [
   {
@@ -577,7 +577,7 @@ const values = [
     title: "Partnership",
     desc: "Building lasting relationships with communities, investors, and industry partners.",
   },
-]
+];
 
 const newsItems = [
   {
@@ -601,7 +601,7 @@ const newsItems = [
     excerpt:
       "Transaction adds significant high-quality natural gas acreage with multi-year development inventory.",
   },
-]
+];
 
 const operations = [
   {
@@ -619,19 +619,19 @@ const operations = [
     img: PIPES_IMG,
     desc: "Building midstream infrastructure that supports production and partner growth.",
   },
-]
+];
 
 // ── Sub-sections ──────────────────────────────────────────────────────────────
 
 function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -737,60 +737,60 @@ function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-function StatCounterItem({ value, label }: { value: string label: string }) {
-  const [count, setCount] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+function StatCounterItem({ value, label }: { value: string; label: string }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   // Parse numeric component and optional suffix
-  const rawNum = value.replace(/[^0-9]/g, "")
-  const isNumeric = rawNum.length > 0
-  const targetNum = isNumeric ? parseInt(rawNum, 10) : 0
-  const suffix = value.replace(/[0-9,]/g, "")
+  const rawNum = value.replace(/[^0-9]/g, "");
+  const isNumeric = rawNum.length > 0;
+  const targetNum = isNumeric ? parseInt(rawNum, 10) : 0;
+  const suffix = value.replace(/[0-9,]/g, "");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.2 },
-    )
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
-    if (!isVisible || !isNumeric) return
+    if (!isVisible || !isNumeric) return;
 
-    let start = 0
-    const duration = 2000
-    const stepTime = 20
-    const steps = duration / stepTime
-    const increment = targetNum / steps
+    let start = 0;
+    const duration = 2000;
+    const stepTime = 20;
+    const steps = duration / stepTime;
+    const increment = targetNum / steps;
 
     const timer = setInterval(() => {
-      start += increment
+      start += increment;
       if (start >= targetNum) {
-        setCount(targetNum)
-        clearInterval(timer)
+        setCount(targetNum);
+        clearInterval(timer);
       } else {
-        setCount(Math.floor(start))
+        setCount(Math.floor(start));
       }
-    }, stepTime)
+    }, stepTime);
 
-    return () => clearInterval(timer)
-  }, [isVisible, isNumeric, targetNum])
+    return () => clearInterval(timer);
+  }, [isVisible, isNumeric, targetNum]);
 
-  const displayVal = isNumeric ? `${count.toLocaleString()}${suffix}` : value
+  const displayVal = isNumeric ? `${count.toLocaleString()}${suffix}` : value;
 
   return (
     <div ref={ref} className="px-6 sm:px-10 py-10 text-center">
@@ -808,7 +808,7 @@ function StatCounterItem({ value, label }: { value: string label: string }) {
         {label}
       </div>
     </div>
-  )
+  );
 }
 
 function StatsSection() {
@@ -822,7 +822,7 @@ function StatsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function AboutIntroSection() {
@@ -899,7 +899,7 @@ function AboutIntroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function CoreValuesSection() {
@@ -959,7 +959,7 @@ function CoreValuesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function OperationsSection() {
@@ -1024,7 +1024,7 @@ function OperationsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function NewsSection() {
@@ -1110,7 +1110,7 @@ function NewsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function CTABannerSection() {
@@ -1151,7 +1151,7 @@ function CTABannerSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 // ── Page export ───────────────────────────────────────────────────────────────
@@ -1167,5 +1167,5 @@ export default function HomePage() {
       <NewsSection />
       <CTABannerSection />
     </main>
-  )
+  );
 }

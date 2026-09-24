@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-type NavChild = { label: string to: string }
-type NavItem = { label: string to?: string children?: NavChild[] }
+type NavChild = { label: string; to: string };
+type NavItem = { label: string; to?: string; children?: NavChild[] };
 
 const navItems: NavItem[] = [
   { label: "Home", to: "/" },
@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Contact", to: "/contact" },
-]
+];
 
 const navLabelStyle: React.CSSProperties = {
   fontFamily: "'Barlow Condensed', sans-serif",
@@ -42,20 +42,20 @@ const navLabelStyle: React.CSSProperties = {
   fontSize: "1rem",
   letterSpacing: "0.1em",
   textTransform: "uppercase",
-}
+};
 
 export default function Navbar() {
-  const location = useLocation()
-  const navigate = useNavigate()
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
-  const isActive = (to: string) => location.pathname === to
+  const isActive = (to: string) => location.pathname === to;
 
   const closeMenu = () => {
-    setMobileOpen(false)
-    setMobileExpanded(null)
-  }
+    setMobileOpen(false);
+    setMobileExpanded(null);
+  };
 
   return (
     <>
@@ -315,5 +315,5 @@ export default function Navbar() {
         </div>
       </div>
     </>
-  )
+  );
 }
