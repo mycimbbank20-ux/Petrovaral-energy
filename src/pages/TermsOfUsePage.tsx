@@ -122,7 +122,7 @@ export default function TermsOfUsePage() {
                 href="mailto:legal@petrovaraenergy.com"
                 className="text-orange-600 hover:underline font-semibold"
               >
-                legal@petrovara.com
+                info@petrovara.com
               </a>
               .
             </div>
