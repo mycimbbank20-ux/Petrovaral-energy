@@ -1,6 +1,6 @@
-import { toast } from "sonner"
-import PageHeader from "../components/PageHeader"
-import { INDUSTRIAL_IMG } from "../constants/images"
+import { toast } from "sonner";
+import PageHeader from "../components/PageHeader";
+import { INDUSTRIAL_IMG } from "../constants/images";
 
 const stockInfo = [
   { label: "TSX Ticker", value: "PVE" },
@@ -9,7 +9,7 @@ const stockInfo = [
   { label: "Avg. Daily Volume", value: "620,000 shares" },
   { label: "52-Week High", value: "CAD $22.10" },
   { label: "52-Week Low", value: "CAD $14.65" },
-]
+];
 
 const investmentHighlights = [
   "High-quality, light oil weighted production base",
@@ -18,7 +18,7 @@ const investmentHighlights = [
   "Proven management team with 25+ years industry experience",
   "Active shareholder return program including dividends",
   "ESG commitment aligned with leading industry standards",
-]
+];
 
 const documents = [
   {
@@ -51,7 +51,7 @@ const documents = [
     date: "Sep 1, 2026",
     type: "Presentation",
   },
-]
+];
 
 function HighlightsSection() {
   return (
@@ -74,7 +74,7 @@ function HighlightsSection() {
             key={h}
             className="flex items-start gap-3 border border-slate-200 p-5 bg-slate-50"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#c85a00] mt-2 flex-shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-600 mt-2 shrink-0" />
             <p
               className="text-slate-700 text-sm"
               style={{ fontFamily: "'Barlow', sans-serif" }}
@@ -85,15 +85,16 @@ function HighlightsSection() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function DocumentsSection() {
   const handleDownload = (title: string) => {
-    toast.success(`Downloading: ${title}`, {
-      description: "Your file will be ready shortly.",
-    })
-  }
+    toast.error(`Downloading: ${title}`, {
+      description:
+        "This file is classified and restricted for public download.",
+    });
+  };
 
   return (
     <div>
@@ -113,7 +114,7 @@ function DocumentsSection() {
           <button
             key={d.title}
             onClick={() => handleDownload(d.title)}
-            className="w-full flex items-center justify-between border border-slate-200 px-5 py-4 hover:border-[#c85a00]/50 hover:bg-slate-50 transition-all text-left"
+            className="w-full flex items-center justify-between border border-slate-200 px-5 py-4 hover:border-orange-600/50 hover:bg-slate-50 transition-all text-left"
           >
             <div>
               <div
@@ -148,7 +149,7 @@ function DocumentsSection() {
               </div>
             </div>
             <svg
-              className="w-4 h-4 text-slate-400 flex-shrink-0"
+              className="w-4 h-4 text-slate-400 shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -164,13 +165,13 @@ function DocumentsSection() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function StockSidebar() {
   return (
     <div className="space-y-6">
-      <div className="bg-[#050e1f] p-8">
+      <div className="bg-navy-950 p-8">
         <h3
           style={{
             fontFamily: "'Barlow Condensed', sans-serif",
@@ -237,20 +238,20 @@ function StockSidebar() {
           For investor inquiries, contact our Investor Relations team.
         </p>
         <p
-          className="text-[#050e1f] text-sm font-medium"
+          className="text-navy-950 text-sm font-medium"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-          ir@petrovaraenergy.com
+          info@petrovara.com
         </p>
         <p
-          className="text-[#050e1f] text-sm mt-1"
+          className="text-navy-950 text-sm mt-1"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-          +1 (403) 123-4568
+          +1 (672) 202-1705
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 export default function InvestorsPage() {
@@ -271,5 +272,5 @@ export default function InvestorsPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
