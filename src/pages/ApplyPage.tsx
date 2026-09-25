@@ -58,7 +58,7 @@ interface FormState {
   lastName: string;
   email: string;
   phone: string;
-  linkedin: string;
+  // linkedin: string;
   position: string;
   department: string;
   location: string;
@@ -76,7 +76,7 @@ const initialForm: FormState = {
   lastName: "",
   email: "",
   phone: "",
-  linkedin: "",
+  // linkedin: "",
   position: "",
   department: "",
   location: "",
@@ -183,7 +183,7 @@ function PersonalInfoSection({
             className="form-field"
           />
         </div>
-        <div className="sm:col-span-2">
+        {/* <div className="sm:col-span-2">
           <FieldLabel>LinkedIn Profile URL</FieldLabel>
           <input
             name="linkedin"
@@ -193,7 +193,7 @@ function PersonalInfoSection({
             placeholder="https://linkedin.com/in/yourprofile"
             className="form-field"
           />
-        </div>
+        </div> */}
       </div>
     </fieldset>
   );
