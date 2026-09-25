@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
-import PageHeader from "../components/PageHeader"
-import { TEAM_IMG } from "../constants/images"
+import { Link } from "react-router-dom";
+import PageHeader from "../components/PageHeader";
+import { TEAM_IMG } from "../constants/images";
 
 const benefits = [
   {
@@ -23,7 +23,7 @@ const benefits = [
     title: "Inclusive Culture",
     desc: "A diverse, inclusive workplace where every perspective is valued and respected.",
   },
-]
+];
 
 const jobs = [
   {
@@ -86,7 +86,187 @@ const jobs = [
     location: "Calgary, AB (Hybrid)",
     posted: "Aug 15, 2026",
   },
-]
+  {
+    title: "Rig Manager",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Aug 14, 2026",
+  },
+  {
+    title: "Driller",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Aug 14, 2026",
+  },
+  {
+    title: "Assistant Driller",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Aug 12, 2026",
+  },
+  {
+    title: "Rig Technician",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Aug 12, 2026",
+  },
+  {
+    title: "Industrial Electrician",
+    dept: "Maintenance",
+    location: "Grande Prairie, AB",
+    posted: "Aug 10, 2026",
+  },
+  {
+    title: "Heavy-Duty Equipment Mechanic",
+    dept: "Maintenance",
+    location: "Grande Prairie, AB",
+    posted: "Aug 10, 2026",
+  },
+  {
+    title: "Industrial Mechanic / Millwright",
+    dept: "Maintenance",
+    location: "Grande Prairie, AB",
+    posted: "Aug 8, 2026",
+  },
+  {
+    title: "Electrical Engineer",
+    dept: "Engineering",
+    location: "Calgary, AB",
+    posted: "Aug 8, 2026",
+  },
+  {
+    title: "PLC/SCADA Technician",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Aug 6, 2026",
+  },
+  {
+    title: "HSE Technician",
+    dept: "HSE",
+    location: "Grande Prairie, AB",
+    posted: "Aug 6, 2026",
+  },
+  {
+    title: "Safety Officer",
+    dept: "HSE",
+    location: "Calgary, AB",
+    posted: "Aug 4, 2026",
+  },
+  {
+    title: "Welding Inspector",
+    dept: "HSE",
+    location: "Grande Prairie, AB",
+    posted: "Aug 4, 2026",
+  },
+  {
+    title: "Civil Engineer",
+    dept: "Engineering",
+    location: "Calgary, AB",
+    posted: "Aug 2, 2026",
+  },
+  {
+    title: "Pipeline Engineer",
+    dept: "Engineering",
+    location: "Calgary, AB",
+    posted: "Aug 2, 2026",
+  },
+  {
+    title: "Pipeline Operator",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 30, 2026",
+  },
+  {
+    title: "Heavy Equipment Operator",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 30, 2026",
+  },
+  {
+    title: "Crane Operator",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 28, 2026",
+  },
+  {
+    title: "Welder",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 28, 2026",
+  },
+  {
+    title: "Pipe-fitter",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 25, 2026",
+  },
+  {
+    title: "Field Electrician",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 25, 2026",
+  },
+  {
+    title: "Corporate Secretary",
+    dept: "Administration",
+    location: "Calgary, AB",
+    posted: "Jul 22, 2026",
+  },
+  {
+    title: "Executive Assistant",
+    dept: "Administration",
+    location: "Calgary, AB",
+    posted: "Jul 22, 2026",
+  },
+  {
+    title: "Receptionist",
+    dept: "Administration",
+    location: "Calgary, AB",
+    posted: "Jul 20, 2026",
+  },
+  {
+    title: "Truck Driver",
+    dept: "Logistics",
+    location: "Grande Prairie, AB",
+    posted: "Jul 20, 2026",
+  },
+  {
+    title: "Field Laborer",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 18, 2026",
+  },
+  {
+    title: "Rig Helper",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 18, 2026",
+  },
+  {
+    title: "Warehouse Assistant",
+    dept: "Supply Chain",
+    location: "Grande Prairie, AB",
+    posted: "Jul 15, 2026",
+  },
+  {
+    title: "Maintenance Helper",
+    dept: "Maintenance",
+    location: "Grande Prairie, AB",
+    posted: "Jul 15, 2026",
+  },
+  {
+    title: "Well Service Helper",
+    dept: "Operations",
+    location: "Grande Prairie, AB",
+    posted: "Jul 12, 2026",
+  },
+  {
+    title: "HSE Assistant",
+    dept: "HSE",
+    location: "Calgary, AB",
+    posted: "Jul 10, 2026",
+  },
+];
 
 function WhyPetrovaraSection() {
   return (
@@ -157,7 +337,7 @@ function WhyPetrovaraSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function JobListingsSection() {
@@ -264,7 +444,7 @@ function JobListingsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default function CareersPage() {
@@ -278,5 +458,5 @@ export default function CareersPage() {
       <WhyPetrovaraSection />
       <JobListingsSection />
     </main>
-  )
+  );
 }
