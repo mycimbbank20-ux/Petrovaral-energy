@@ -8,7 +8,7 @@
 // //     city: "Calgary (HQ)",
 // //     address: "1000 – 520 3rd Ave SW, Calgary, AB T2P 0R3",
 // //     phone: " +1 (672) 202-1705",
-// //     email: "info@petrovaraenergy.com",
+// //     email: "info@petrovara.com",
 // //   },
 // //   {
 // //     city: "Grande Prairie",
@@ -351,7 +351,7 @@
 //     country: "Canada",
 //     address: "1000 – 520 3rd Ave SW, Calgary, AB T2P 0R3",
 //     phone: "+1 (672) 202-1705",
-//     email: "info@petrovaraenergy.com",
+//     email: "info@petrovara.com",
 //   },
 //   // {
 //   //   city: "Grande Prairie",
@@ -791,7 +791,7 @@ const canadianOffices: Office[] = [
     country: "Canada",
     address: "1000 – 520 3rd Ave SW, Calgary, AB T2P 0R3",
     phone: "+1 (672) 202-1705",
-    email: "info@petrovaraenergy.com",
+    email: "info@petrovara.com",
   },
   // {
   //   city: "Grande Prairie",

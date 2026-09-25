@@ -116,7 +116,7 @@
 //               </p>
 //               <p className="mt-3">
 //                 <a
-//                   href="mailto:info@petrovaraenergy.com"
+//                   href="mailto:info@petrovara.com"
 //                   className="hover:text-white transition-colors"
 //                 >
 //                   info@petrovara.com
@@ -159,7 +159,6 @@
 //     </footer>
 //   );
 // }
-
 
 import { Link } from "react-router-dom";
 
@@ -284,10 +283,10 @@ export default function Footer() {
               </p>
               <p className="mt-3">
                 <a
-                  href="mailto:info@petrovaraenergy.com"
+                  href="mailto:info@petrovara.com"
                   className="hover:text-white transition-colors"
                 >
-                  info@petrovaraenergy.com
+                  info@petrovara.com
                 </a>
               </p>
               <p>
