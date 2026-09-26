@@ -699,7 +699,7 @@ import { useState, useRef } from "react";
 import { toast } from "sonner";
 import PageHeader from "../components/PageHeader";
 import { TEAM_IMG } from "../constants/images";
-import { supabase } from "../../utils/supabase";
+import { supabase } from "../utils/supabase";
 
 const positions = [
   "Senior Reservoir Engineer",

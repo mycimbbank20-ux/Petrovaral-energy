@@ -478,7 +478,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import PageHeader from "../components/PageHeader";
 import { INDUSTRIAL_IMG } from "../constants/images";
-import { supabase } from "../../utils/supabase";
+import { supabase } from "../utils/supabase";
 
 interface Office {
   city: string;
